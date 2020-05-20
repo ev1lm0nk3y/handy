@@ -1,0 +1,25 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hithere
+  namespace: default
+  labels:
+    app: interview
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      labels:
+        app: interview
+  template:
+    metadata:
+      labels:
+        app: interview
+    spec:
+      containers:
+        - name: hithere
+          image: hithere
+          ports:
+            containerPort: 8080
+
